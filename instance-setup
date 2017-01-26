@@ -1,8 +1,8 @@
 #!/bin/bash
-sudo apt -y update
-sudo apt -y install awscli
-sudo apt -y install ruby
-sudo apt -y install httpd
+sudo apt --yes update
+sudo apt --yes install awscli
+sudo apt --yes install ruby
+sudo apt --yes install apache2
 cd /home/ubuntu
 aws s3 cp s3://aws-codedeploy-ap-south-1/latest/install . --region ap-south-1
 chmod +x ./install
