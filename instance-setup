@@ -1,8 +1,12 @@
 #!/bin/bash
 sudo apt --yes update
+echo 'ubuntu updated' >> /var/log/codedeploy.log
 sudo apt --yes install awscli
+echo 'awscli installed' >> /var/log/codedeploy.log
 sudo apt --yes install ruby
+echo 'ruby installed' >> /var/log/codedeploy.log
 sudo apt --yes install apache2
+echo 'apache2' >> /var/log/codedeploy.log
 cd /home/ubuntu
 aws s3 cp s3://aws-codedeploy-ap-south-1/latest/install . --region ap-south-1
 chmod +x ./install

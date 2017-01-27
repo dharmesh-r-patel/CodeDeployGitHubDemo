@@ -3,4 +3,5 @@ isExistApp = `pgrep httpd`
 if [[ -n  $isExistApp ]]; then
     service apache2 stop        
 fi
+echo 'stop server' >> /var/log/codedeploy.log
 
