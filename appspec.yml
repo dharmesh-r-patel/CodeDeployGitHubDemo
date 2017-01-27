@@ -1,13 +1,14 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
-    destination: /var/www/html/
+  - source: /
+    destination: /www/
 hooks:
   BeforeInstall:
     - location: instance-setup
       timeout: 300
       runas: root
+  ApplicationStart:
     - location: scripts/start_server
       timeout: 300
       runas: root
