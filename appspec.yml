@@ -5,14 +5,14 @@ files:
     destination: /home/ubuntu
 hooks:
   BeforeInstall:
-    - location: /home/ubuntu/www/ec2test/instance-setup
+    - location: /home/ubuntu/instance-setup
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /home/ubuntu/www/ec2test/scripts/start_server
+    - location: /home/ubuntu/scripts/start_server
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: /home/ubuntu/www/ec2test/scripts/stop_server
+    - location: /home/ubuntu/scripts/stop_server
       timeout: 300
       runas: root
