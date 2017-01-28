@@ -1,18 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: ./
+  - source: /
     destination: /home/ubuntu/www/ec2test
 hooks:
   BeforeInstall:
-    - location: /home/ubuntu/www/ec2test/instance-setup
+    - location: instance-setup
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: /home/ubuntu/www/ec2test/scripts/start_server
+    - location: scripts/start_server
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: /home/ubuntu/www/ec2test/scripts/stop_server
+    - location: scripts/stop_server
       timeout: 300
       runas: root
