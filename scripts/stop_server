@@ -1,7 +1,6 @@
 #!/bin/bash
-isExistApp = `pgrep httpd`
+isExistApp = `pgrep nginx`
 if [[ -n  $isExistApp ]]; then
-    service apache2 stop        
+    sudo /etc/init.d/nginx stop
 fi
-echo 'stop server' >> /var/log/codedeploy.log
-
+echo 'stop nginx server' >> /var/log/codedeploy.log

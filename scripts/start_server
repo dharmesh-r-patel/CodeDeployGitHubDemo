@@ -2,10 +2,12 @@
 # I want to make sure that the directory is clean and has nothing left over from
 # previous deployments. The servers auto scale so the directory may or may not
 # exist.
-if [ -d /var/www/html ]; then
-    rm -rf /var/www/html
+isExistApp = `pgrep nginx`
+if [[ -n  $isExistApp ]]; then
+    sudo /etc/init.d/nginx restart
+else
+    sudo /etc/init.d/nginx start
 fi
-mkdir -vp /var/www/html
-service apache2 start
-echo 'Start Server' >> /var/log/codedeploy.log
-
+echo 'start nginx server' >> /var/log/codedeploy.log
+sudo pm2 start app.json
+echo 'start pm2' >> /var/log/codedeploy.log

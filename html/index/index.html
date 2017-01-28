@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Numbertank</title>
+    <meta name="robots" content="NOODP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Social Messenger">
+    <meta name="author" content="Shantai Technologies Ltd.">
+    <meta name="dcterms.dateCopyrighted" content="2016">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto' rel='stylesheet' type='text/css'>
+    <link href="https://www.numbertank.com/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://s3-ap-southeast-1.amazonaws.com/static.numbertank.com/stylesheets/lp161003.css">
+</head>
+<body>
+    <a class="hamburger" href="javascript:void(0)">
+      <i></i>
+      <i></i>
+      <i></i>
+    </a>
+    <input id="menu-open" onclick="clickbutton()" class="icon" type="radio" value="0" name="menu">
+    <section id="middle-container">
+          <section class="lpmaincontent">
+            <section class="lpcontent home">
+              <section class="main-head">
+                <a class="logo" href="javascript:void(0)"></a>
+                <h1 class="heading">Social Messenger</h1>
+              </section>
+              <section class="service">
+                <section class="chats">
+                  <h4>Chat</h4>
+                  <p>
+                    Chat with your friends.
+                  </p>
+                </section>
+                <section class="channel">
+                  <h4>Channels</h4>
+                  <p>
+                    Get notifications for content you subscribed to and send out notifications to your followers.
+                  </p>
+                </section>
+                <section class="album">
+                  <h4>Albums</h4>
+                  <p>
+                    Share 24 hour auto-deleting albums with your friends.
+                  </p>
+                </section>
+                <section class="store">
+                  <a class="app-store" href="https://itunes.apple.com/in/app/numbertank/id1111822451?mt=8" target="_blank" ontouchstart="return true;"></a>
+                  <a class="google-play" href="https://play.google.com/store/apps/details?id=com.numberatank&hl=en" target="_blank" ontouchstart="return true;"></a>
+                </section>
+              </section>
+            </section>
+            <section class="store-mobile">
+                <a class="app-store" href="https://itunes.apple.com/in/app/numbertank/id1111822451?mt=8" target="_blank" ontouchstart="return true;"></a>
+                <a class="google-play" href="https://play.google.com/store/apps/details?id=com.numberatank&hl=en" target="_blank" ontouchstart="return true;"></a>
+            </section>
+          </section>
+    </section>
+    <footer>
+      <a class="close"></a><nav><ul><li class="home"><a href="/">Home</a></li><li><a href="/n/about.html">About</a></li><li><a href="/n/contact.html">Contact</a></li><li><a href="/n/privacy.html">Privacy</a></li><li><a href="/n/terms.html">Terms</a></li><li><a href="/n/jobs.html">Jobs</a></li><li><a href="/n/faq.html">Faq</a></li></ul></nav><address>© 2016 Shantai Technologies Limited</address>
+    </footer>
+    <input id="menu-close" onclick="closebutton()" class="close" type="radio" value="0" name="menu">
+    <script>
+      function clickbutton(){
+        var menuopen = document.getElementById('menu-open');
+        document.getElementsByTagName("body")[0].style.overflow = 'hidden';
+      }
+      function closebutton(){
+        var menuclose = document.getElementById('menu-close');
+        document.getElementsByTagName("body")[0].style.overflow = 'auto';
+      }
+    </script>
+</body>
+</html>
