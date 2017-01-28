@@ -1,9 +1,9 @@
 {
-  "name": "mobileApps",
+  "name": "ec2test",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "numbertank secure mobile application"
+    "start": "codedploy test"
   },
   "dependencies": {
     "apn": "^2.1.2",

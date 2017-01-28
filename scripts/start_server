@@ -4,11 +4,20 @@
 # exist.
 isExistApp = `pgrep nginx`
 if [[ -n  $isExistApp ]]; then
+    echo 'start nginx restart' >> /var/log/codedeploy.log
     sudo /etc/init.d/nginx restart
 else
+    echo 'start nginx start' >> /var/log/codedeploy.log
     sudo /etc/init.d/nginx start
 fi
 cd /home/ubuntu/www/ec2test
-echo 'start nginx server' >> /var/log/codedeploy.log
-sudo pm2 start pm2startup.json
-echo 'start pm2' >> /var/log/codedeploy.log
+
+pm2 describe 'Ec2 Script Test' > /dev/null
+RUNNING=$?
+if [ "${RUNNING}" -ne 0 ]; then
+  echo 'start pm2 start' >> /var/log/codedeploy.log
+  sudo pm2 start pm2startup.json
+else
+  echo 'start pm2 gracefully' >> /var/log/codedeploy.log
+  pm2 pm2 gracefulReload all
+fi;
