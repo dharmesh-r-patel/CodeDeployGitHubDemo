@@ -8,6 +8,7 @@ if [[ -n  $isExistApp ]]; then
 else
     sudo /etc/init.d/nginx start
 fi
+cd /home/ubuntu/www/ec2test
 echo 'start nginx server' >> /var/log/codedeploy.log
-sudo pm2 start app.json
+sudo pm2 start pm2startup.json
 echo 'start pm2' >> /var/log/codedeploy.log

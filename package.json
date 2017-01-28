@@ -1,0 +1,33 @@
+{
+  "name": "mobileApps",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "numbertank secure mobile application"
+  },
+  "dependencies": {
+    "apn": "^2.1.2",
+    "async": "^2.1.2",
+    "body-parser": "^1.15.2",
+    "connect-redis": "^3.1.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "hiredis": "^0.5.0",
+    "jade": "^1.11.0",
+    "jwt-simple": "^0.5.1",
+    "lodash": "^4.16.4",
+    "maxmind": "^0.6.0",
+    "method-override": "^2.3.6",
+    "moment": "^2.15.2",
+    "morgan": "^1.7.0",
+    "mqtt": "^2.0.1",
+    "mysql": "^2.11.1",
+    "nexmo": "^1.1.0",
+    "node-gcm": "^0.14.4",
+    "pmx": "^0.6.8",
+    "redis": "^0.12.1",
+    "redis-scripto": "^0.1.3",
+    "sendgrid": "^1.9.2",
+    "validator": "^3.41.3"
+  }
+}
