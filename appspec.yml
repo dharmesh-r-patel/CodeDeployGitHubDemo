@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/www/ec2test
+    destination: /home/ubuntu
 hooks:
   BeforeInstall:
     - location: /home/ubuntu/www/ec2test/instance-setup
