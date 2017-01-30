@@ -34,8 +34,9 @@ do
   ps cax | grep $p > /dev/null
 
   if [ $? -eq 0 ]; then
-    echo "Process $p is running."
+    echo "Process $p is running."  >> /var/log/codedeploy.log
   else
-    echo "Process $p is not running."
+    echo "Process $p is not running."  >> /var/log/codedeploy.log
   fi
 done
+echo 'after loop' >> /var/log/codedeploy.log
