@@ -20,10 +20,10 @@ done
 cd /home/ubuntu/www/ec2test
 sudo npm install
 echo 'npm installed in /home/ubuntu/www/ec2test' >> /var/log/codedeploy.log
-
+pm2 stop all
+echo 'manually stopped pm2' >> /var/log/codedeploy.log
 pm2 describe 'Ec2 Script Test' > /dev/null
 RUNNING=$?
-echo 'Running pm2 $RUNNING' >> /var/log/codedeploy.log
 if [ "${RUNNING}" -ne 0 ]; then
   echo 'pm2 fired command pm2startup.json' >> /var/log/codedeploy.log
   pm2 start pm2startup.json
