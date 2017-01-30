@@ -3,6 +3,8 @@
 # previous deployments. The servers auto scale so the directory may or may not
 # exist.
 #isExistApp = pgrep nginx
+sudo /etc/init.d/nginx stop
+echo 'manually stopped nginx' >> /var/log/codedeploy.log
 isnginxRunning = ps cax | grep nginx > /dev/null
 #if [[ -n  $isExistApp ]]; then
 if [ $isnginxRunning -eq 0 ]; then
