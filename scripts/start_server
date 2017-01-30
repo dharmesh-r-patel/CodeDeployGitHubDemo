@@ -2,7 +2,7 @@
 # I want to make sure that the directory is clean and has nothing left over from
 # previous deployments. The servers auto scale so the directory may or may not
 # exist.
-isExistApp = `pgrep nginx`
+isExistApp = 'pgrep nginx'
 if [[ -n  $isExistApp ]]; then
     echo 'start nginx restart' >> /var/log/codedeploy.log
     sudo /etc/init.d/nginx restart

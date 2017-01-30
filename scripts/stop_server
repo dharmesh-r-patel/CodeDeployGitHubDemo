@@ -1,5 +1,5 @@
 #!/bin/bash
-isExistApp = `pgrep nginx`
+isExistApp = 'pgrep nginx'
 if [[ -n  $isExistApp ]]; then
     sudo /etc/init.d/nginx stop
 fi
