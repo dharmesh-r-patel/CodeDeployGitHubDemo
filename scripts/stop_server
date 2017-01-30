@@ -1,6 +1,7 @@
 #!/bin/bash
 isExistApp = 'pgrep nginx'
 if [[ -n  $isExistApp ]]; then
-    sudo /etc/init.d/nginx stop
+    echo 'nginx server found at the time of stop server' >> /var/log/codedeploy.log
+#    sudo /etc/init.d/nginx stop
 fi
 echo 'stop nginx server' >> /var/log/codedeploy.log
