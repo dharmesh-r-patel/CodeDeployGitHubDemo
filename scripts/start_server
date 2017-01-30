@@ -10,8 +10,12 @@ else
     echo 'start nginx start' >> /var/log/codedeploy.log
     sudo /etc/init.d/nginx start
 fi
-cd /home/ubuntu/www/ec2test
 
+cd /home/ubuntu/www/ec2test
+sudo npm install
+echo 'installed npm installed' >> /var/log/codedeploy.log
+
+echo 'start pm2' >> /var/log/codedeploy.log
 pm2 describe 'Ec2 Script Test' > /dev/null
 RUNNING=$?
 if [ "${RUNNING}" -ne 0 ]; then

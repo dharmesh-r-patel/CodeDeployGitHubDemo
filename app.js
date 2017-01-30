@@ -112,8 +112,8 @@ apiRouter.get('/', function(req, res) {
 //apply the api route to our application
 app.use('/', apiRouter);
 
-server.listen(3004, function () {
-    console.log('Web server listening at port %d', 3004);
+server.listen(3000, function () {
+    console.log('CodeDeploy Server listening at port %d', 3000);
 });
 
 process.on('SIGINT', function() {

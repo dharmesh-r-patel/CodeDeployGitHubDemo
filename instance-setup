@@ -1,4 +1,2 @@
 #!/bin/bash
 echo 'called instance-setup' >> /var/log/codedeploy.log
-cd /home/ubuntu/www/ec2test
-sudo npm install
