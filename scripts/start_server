@@ -5,9 +5,10 @@
 #isExistApp = pgrep nginx
 sudo /etc/init.d/nginx stop
 echo 'manually stopped nginx' >> /var/log/codedeploy.log
-isnginxRunning = ps cax | grep nginx > /dev/null
+#isnginxRunning = ps cax | grep nginx > /dev/null
 #if [[ -n  $isExistApp ]]; then
-if [ $isnginxRunning -eq 0 ]; then
+ps cax | grep nginx > /dev/null
+if [ $? -eq 0 ]; then
 #if (( $(ps -ef | grep -v grep | grep nginx | wc -l) > 0 )) then
     echo 'Do not need to restart nginx server' >> /var/log/codedeploy.log
     #sudo /etc/init.d/nginx restart
