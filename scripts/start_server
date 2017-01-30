@@ -2,8 +2,9 @@
 # I want to make sure that the directory is clean and has nothing left over from
 # previous deployments. The servers auto scale so the directory may or may not
 # exist.
-isExistApp = 'pgrep nginx'
-if [[ -n  $isExistApp ]]; then
+#isExistApp = 'pgrep nginx'
+#if [[ -n  $isExistApp ]]; then
+if (( $(ps -ef | grep -v grep | grep nginx | wc -l) > 0 )) then
     echo 'Do not need to restart nginx server' >> /var/log/codedeploy.log
     #sudo /etc/init.d/nginx restart
 else
@@ -18,6 +19,7 @@ echo 'installed npm installed' >> /var/log/codedeploy.log
 echo 'start pm2' >> /var/log/codedeploy.log
 pm2 describe 'Ec2 Script Test' > /dev/null
 RUNNING=$?
+echo 'Running pm2 $RUNNING' >> /var/log/codedeploy.log
 if [ "${RUNNING}" -ne 0 ]; then
   echo 'pm2 fired command pm2startup.json' >> /var/log/codedeploy.log
   pm2 start pm2startup.json
