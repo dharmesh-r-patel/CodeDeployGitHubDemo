@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 'called instance-setup' >> /var/log/codedeploy.log
+echo 'instance-setup' >> /var/log/codedeploy.log

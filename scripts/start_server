@@ -2,7 +2,6 @@
 # I want to make sure that the directory is clean and has nothing left over from
 # previous deployments. The servers auto scale so the directory may or may not
 # exist.
-#isExistApp = pgrep nginx
 sudo /etc/init.d/nginx stop
 echo 'manually stopped nginx' >> /var/log/codedeploy.log
 PROC="nginx"
@@ -14,26 +13,14 @@ do
     echo "Process $p is running start_server."  >> /var/log/codedeploy.log
   else
     echo "Process $p is not running start_server."  >> /var/log/codedeploy.log
-    sudo /etc/init.d/nginx start
+    #sudo /etc/init.d/nginx start
   fi
 done
-#isnginxRunning = ps cax | grep nginx > /dev/null
-#if [[ -n  $isExistApp ]]; then
-#ps cax | grep nginx > /dev/null
-#if [ $? -eq 0 ]; then
-#if (( $(ps -ef | grep -v grep | grep nginx | wc -l) > 0 )) then
-#    echo 'Do not need to restart nginx server' >> /var/log/codedeploy.log
-#    #sudo /etc/init.d/nginx restart
-#else
-#    echo 'start nginx' >> /var/log/codedeploy.log
-#    sudo /etc/init.d/nginx start
-#fi
 
 cd /home/ubuntu/www/ec2test
 sudo npm install
-echo 'npm installed' >> /var/log/codedeploy.log
+echo 'npm installed in /home/ubuntu/www/ec2test' >> /var/log/codedeploy.log
 
-echo 'start pm2' >> /var/log/codedeploy.log
 pm2 describe 'Ec2 Script Test' > /dev/null
 RUNNING=$?
 echo 'Running pm2 $RUNNING' >> /var/log/codedeploy.log
@@ -44,16 +31,3 @@ else
   echo 'pm2 gracefully' >> /var/log/codedeploy.log
   pm2 gracefulReload all
 fi
-
-#PROC="nginx pm2"
-#for p in $PROC
-#do
-#  ps cax | grep $p > /dev/null
-
-#  if [ $? -eq 0 ]; then
-#    echo "Process $p is running."  >> /var/log/codedeploy.log
-#  else
-#    echo "Process $p is not running."  >> /var/log/codedeploy.log
-#  fi
-#done
-#echo 'after loop' >> /var/log/codedeploy.log
