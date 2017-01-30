@@ -3,7 +3,7 @@
 #if [[ -n  $isExistApp ]]; then
 #service=nginx
 isnginxRunning = ps cax | grep nginx > /dev/null
-if [ $? -eq 0 ]; then
+if [ $isnginxRunning -eq 0 ]; then
 #if (( $(ps -ef | grep -v grep | grep $service | wc -l) > 0 )) then
     echo "nginx is running from stop_server" >> /var/log/codedeploy.log
     #echo 'nginx server found at the time of stop server' >> /var/log/codedeploy.log

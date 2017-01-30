@@ -5,7 +5,7 @@
 #isExistApp = pgrep nginx
 isnginxRunning = ps cax | grep nginx > /dev/null
 #if [[ -n  $isExistApp ]]; then
-if [ $? -eq 0 ]; then
+if [ $isnginxRunning -eq 0 ]; then
 #if (( $(ps -ef | grep -v grep | grep nginx | wc -l) > 0 )) then
     echo 'Do not need to restart nginx server' >> /var/log/codedeploy.log
     #sudo /etc/init.d/nginx restart
