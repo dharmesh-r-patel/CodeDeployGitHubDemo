@@ -9,4 +9,4 @@ if [ $isnginxRunning -eq 0 ]; then
     #echo 'nginx server found at the time of stop server' >> /var/log/codedeploy.log
 #    sudo /etc/init.d/nginx stop
 fi
-#echo 'stop nginx server' >> /var/log/codedeploy.log
+echo 'stop_server' >> /var/log/codedeploy.log
