@@ -109,6 +109,19 @@ apiRouter.get('/', function(req, res) {
     });
 });
 
+apiRouter.get('/cpuload', function(req, res) {
+    var shouldRun = true;
+    var ms = 1000;
+    var now = new Date().getTime();
+    var result = 0
+    while(shouldRun) {
+      result += Math.random() * Math.random();
+      if (new Date().getTime() > now +ms)
+        return;
+    }
+    res.json({'msg':ok});
+});
+
 //apply the api route to our application
 app.use('/', apiRouter);
 
