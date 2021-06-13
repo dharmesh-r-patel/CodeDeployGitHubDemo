@@ -1,2 +1,3 @@
 #!/bin/bash
 echo 'instance-setup' >> /var/log/codedeploy.log
+rm -r /home/ubuntu/CodeDeployGitHubDemo/*

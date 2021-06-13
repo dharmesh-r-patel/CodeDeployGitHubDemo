@@ -17,7 +17,7 @@ do
   fi
 done
 
-cd /home/ubuntu/www/ec2test
+cd /home/ubuntu/CodeDeployGitHubDemo
 sudo npm install
 echo 'sudo npm install' >> /var/log/codedeploy.log
 
